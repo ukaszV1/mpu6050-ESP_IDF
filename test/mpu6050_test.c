@@ -27,7 +27,7 @@ static void mpu6050_task(void *arg)
     };
     ESP_ERROR_CHECK(i2c_new_master_bus(&bus_config, &i2c_bus));
     ESP_ERROR_CHECK(mpu6050_init(&mpu6050, &i2c_bus, MPU6050_I2C_ADDRESS));
-    ESP_ERROR_CHECK(mpu6050_config(&mpu6050, ACCE_FS_2G, GYRO_FS_500DPS));
+    ESP_ERROR_CHECK(mpu6050_config(&mpu6050, MPU6050_ACCE_FS_2G, MPU6050_GYRO_FS_500DPS));
     ESP_ERROR_CHECK(mpu6050_wake_up(&mpu6050));
 
     uint8_t device_id;
